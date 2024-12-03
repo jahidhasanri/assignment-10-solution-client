@@ -48,7 +48,7 @@ const Header = () => {
         <div>
           <NavLink
             to="/"
-            className="text-2xl font-bold md:ml-[80px] xl:ml-[60px]"
+            className="text-2xl font-bold md:ml-[80px] lg:ml-[20px] xl:ml-[60px]"
           >
             Sports Zone
           </NavLink>

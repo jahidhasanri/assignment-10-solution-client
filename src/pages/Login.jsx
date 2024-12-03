@@ -1,42 +1,64 @@
 import React, { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider';
 import { toast } from 'react-toastify';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const Login = () => {
-    const { handelLoginWemail, setUser,handelLoginWithGoogle } = useContext(AuthContext);
-    const handelLogin = (e) => {
-        e.preventDefault();
-        const email = e.target.email.value;
-        const password = e.target.password.value;
-        const userssss={email,password}
-        handelLoginWemail(userssss)
-        .then((result) => {
-            console.log('Login Result:', result); 
-            if (result?.user) {
-              toast.success('Login successful!');
-              setUser(result.user);
-              setTimeout(() => {
-                const from = location.state?.from?.pathname || '/';
-                navigate(from, { replace: true });
-              }, 1000);
-            } else {
-              toast.error('Login failed: User not found!');
-            }
-          })
-          .catch((error) => {
-            console.log('Error:', error);
-            toast.error(`Login failed: ${error.message}`);
-          });
-        
-    }
-    return (
-        <div>
-            <Header></Header>
-            <div className="hero bg-base-200 min-h-screen mt-20">
+  const { handelLoginWemail, setUser, handelLoginWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handelLogin = (e) => {
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    // Handle login with email and password
+    handelLoginWemail(email, password)
+      .then((result) => {
+        if (result?.user) {
+          toast.success('Login successful!');
+          setUser(result.user);
+          setTimeout(() => {
+            const from = location.state?.from?.pathname || '/';
+            navigate(from, { replace: true });
+          }, 1000);
+        } else {
+          toast.error('Login failed: User not found!');
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        toast.error(`Login failed: ${error.message}`);
+      });
+  };
+
+  const handleGoogleLogin = () => {
+    // Handle Google login
+    handelLoginWithGoogle()
+      .then((result) => {
+        if (result?.user) {
+          toast.success('Login with Google successful!');
+          setUser(result.user);
+          setTimeout(() => {
+            navigate('/');
+          }, 1000);
+        } else {
+          toast.error('Google login failed!');
+        }
+      })
+      .catch((error) => {
+        console.error('Google Login Error:', error);
+        toast.error(`Google login failed: ${error.message}`);
+      });
+  };
+
+  return (
+    <div>
+      <Header />
+      <div className="hero bg-base-200 min-h-screen mt-20">
         <div className="hero-content flex-col">
           <div className="text-center">
             <h1 className="text-5xl font-bold">Login now!</h1>
@@ -49,8 +71,8 @@ const Login = () => {
                 </label>
                 <input
                   type="email"
-                  name='email'
-                  placeholder="email"
+                  name="email"
+                  placeholder="Email"
                   className="input input-bordered"
                   required
                 />
@@ -61,32 +83,38 @@ const Login = () => {
                 </label>
                 <input
                   type="password"
-                  name='password'
-                  placeholder="password"
+                  name="password"
+                  placeholder="Password"
                   className="input input-bordered"
                   required
                 />
                 <label className="label">
-                  <Link to='/forgetpassword' className="label-text-alt link link-hover">Forgot password?</Link>
+                  <Link to="/forgetpassword" className="label-text-alt link link-hover">
+                    Forgot password?
+                  </Link>
                 </label>
               </div>
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
-              <p>Don't have an account? Please <Link to='/register' className='text-red-500 border-b-2'>Register</Link></p>
+              <p>
+                Don't have an account? Please{' '}
+                <Link to="/register" className="text-red-500 border-b-2">
+                  Register
+                </Link>
+              </p>
             </form>
             <div className="form-control mt-4 w-8/12 mx-auto mb-10">
-              <button  className="btn btn-outline btn-secondary">
-              <FcGoogle/>
-              Login with Google
+              <button onClick={handleGoogleLogin} className="btn btn-outline btn-secondary">
+                <FcGoogle /> Login with Google
               </button>
             </div>
           </div>
         </div>
       </div>
-      <Footer></Footer>
-        </div>
-    );
+      <Footer />
+    </div>
+  );
 };
 
 export default Login;

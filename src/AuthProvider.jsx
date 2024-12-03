@@ -9,7 +9,6 @@ const AuthProvider = ({children}) => {
     const name='rifat';
     const [user,setUser]=useState(null)
     const [loader,setLoader]=useState(true)
-    const [appointments, setAppointments] = useState([]);
     console.log(user);
 
     const handelRegistWemail=(email,password)=>{
@@ -33,17 +32,13 @@ const AuthProvider = ({children}) => {
         return signInWithPopup(auth, googleProvider);
       };
 
-    const updateUserProfile = (updatedData)=>{
-        return updateProfile(auth.currentUser, updatedData)
-    }
+   
 
-    const addAppointment = (appointment) => {
-        setAppointments([...appointments, appointment]);
-    };
+    
 
     
     const userInfo = {
-        name,user,setUser,handelRegistWemail,handelLoginWemail,handleSingOut,loader,updateUserProfile,handelLoginWithGoogle,addAppointment,appointments
+        name,user,setUser,handelRegistWemail,handelLoginWemail,handleSingOut,loader,handelLoginWithGoogle
     }
 
     useEffect(() => {
