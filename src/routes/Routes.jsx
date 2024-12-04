@@ -5,6 +5,7 @@ import AddEquipment from "../pages/AddEquipment";
 import MyEquipment from "../pages/MyEquipment";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import PrivateRoute from "../components/PrivateRoute";
 
 const routes = createBrowserRouter([
     {
@@ -17,11 +18,12 @@ const routes = createBrowserRouter([
     },
     {
         path:'/addequipment',
-        element:<AddEquipment></AddEquipment>
+        element:<PrivateRoute><AddEquipment></AddEquipment></PrivateRoute>
+        
     },
     {
         path:'/myequipment',
-        element:<MyEquipment></MyEquipment>
+        element:<PrivateRoute><MyEquipment></MyEquipment></PrivateRoute>
     },
     {
         path:'/login',
