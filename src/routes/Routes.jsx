@@ -6,11 +6,13 @@ import MyEquipment from "../pages/MyEquipment";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "../components/PrivateRoute";
+import Error from "../pages/Error";
 
 const routes = createBrowserRouter([
     {
         path:'/',
-        element:<Home></Home>
+        element:<Home></Home>,
+        errorElement:<Error></Error>
     },
     {
         path:'/allequipment',
