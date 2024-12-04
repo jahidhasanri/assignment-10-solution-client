@@ -4,6 +4,7 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { AuthContext } from "../AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import './header.css'
 
 const Header = () => {
   const { user, handleSingOut, setUser } = useContext(AuthContext);
@@ -46,12 +47,12 @@ const Header = () => {
     >
       <div className="w-full flex justify-between items-center">
         <div>
-          <NavLink
+          <h1
             to="/"
             className="text-2xl font-bold md:ml-[80px] lg:ml-[20px] xl:ml-[60px]"
           >
             Sports Zone
-          </NavLink>
+          </h1>
         </div>
 
         {/* Desktop Menu */}
