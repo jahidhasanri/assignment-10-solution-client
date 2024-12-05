@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { AuthContext } from "../AuthProvider";
 import { data } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const AddEquipment = () => {
   const { user } = useContext(AuthContext);
@@ -10,6 +11,7 @@ const AddEquipment = () => {
   const handleAddEquipment = (e) => {
     e.preventDefault();
    const form=e.target;
+   const img=form.image.value;
    const itemName=form.itemName.value; 
    const categoryName=form.categoryName.value; 
    const description=form.description.value; 
@@ -17,10 +19,10 @@ const AddEquipment = () => {
    const rating=form.rating.value; 
    const customization=form.customization.value; 
    const processingTime=form.processingTime.value; 
-   const stockStatus=form.image.value; 
+   const stockStatus=form.stockStatus.value; 
    const useremail= user?.email;
    const username=user?.displayName;
-   const allinformation={itemName,categoryName,description,price,rating,customization,processingTime,stockStatus,useremail,username}
+   const allinformation={img,itemName,categoryName,description,price,rating,customization,processingTime,stockStatus,useremail,username}
    console.log(allinformation);
    fetch('http://localhost:5000/equepment',{
     method:"POST",
@@ -31,7 +33,11 @@ const AddEquipment = () => {
    })
    .then((res)=> res.json())
    .then((data)=>{
-    alert("data gese");
+    console.log(data);
+    if(data.insertedId){
+      toast.success('data added successfully')
+      form.reset();
+    }
    })
   };
 
