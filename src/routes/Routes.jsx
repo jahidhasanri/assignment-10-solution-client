@@ -8,6 +8,7 @@ import Register from "../pages/Register";
 import PrivateRoute from "../components/PrivateRoute";
 import Error from "../pages/Error";
 import ViewDetails from "../pages/ViewDetails";
+import Update from "../pages/Update";
 
 const routes = createBrowserRouter([
     {
@@ -42,6 +43,12 @@ const routes = createBrowserRouter([
         element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
         loader:({params})=>fetch(`http://localhost:5000/equepment/${params.id}`)
         
+    },
+    {
+        path:'update/:id',
+        element:<Update></Update>,
+        loader:({params})=>fetch(`http://localhost:5000/equepment/${params.id}`)
     }
+
 ])
 export default routes

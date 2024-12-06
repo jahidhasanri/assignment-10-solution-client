@@ -108,7 +108,7 @@ const MyEquipment = () => {
                                 </div>
                                 <div className="mt-auto flex justify-between items-center gap-5 pt-4">
                                     <Link
-                                        to={`/updateequipment/${equipment._id}`}
+                                        to={`/update/${equipment._id}`}
                                         className="bg-blue-600 text-white py-2 px-6 h-10 flex items-center justify-center rounded"
                                     >
                                         Update
