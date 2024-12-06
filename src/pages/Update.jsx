@@ -1,36 +1,97 @@
 import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Update = () => {
     const user = useLoaderData();
+    const navigate = useNavigate(); // Initialize useNavigate hook
 
     const handleUpdateEquipment = (e) => {
         e.preventDefault();
-        const form=e.target;
-   const img=form.image.value;
-   const itemName=form.itemName.value; 
-   const categoryName=form.categoryName.value; 
-   const description=form.description.value; 
-   const price=form.price.value; 
-   const rating=form.rating.value; 
-   const customization=form.customization.value; 
-   const processingTime=form.processingTime.value; 
-   const stockStatus=form.stockStatus.value; 
-   const useremail= user?.useremail;
-   const username=user?.username;
-   const allinformation={img,itemName,categoryName,description,price,rating,customization,processingTime,stockStatus,useremail,username}
-   console.log(allinformation);
+        const form = e.target;
+
+        // Collect form data
+        const img = form.image.value;
+        const itemName = form.itemName.value; 
+        const categoryName = form.categoryName.value; 
+        const description = form.description.value; 
+        const price = form.price.value; 
+        const rating = form.rating.value; 
+        const customization = form.customization.value; 
+        const processingTime = form.processingTime.value; 
+        const stockStatus = form.stockStatus.value; 
+        const useremail = user?.useremail;
+        const username = user?.username;
+        
+        const allinformation = { img, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus, useremail, username };
+        console.log(allinformation);
+
+        // Show confirmation alert
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, update it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Send the data to the server to update the equipment
+                fetch(`http://localhost:5000/equepment/${user._id}`, {
+                    method: "PUT",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(allinformation)
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                    if (data.modifiedCount > 0) {
+                        // Success: Notify the user and reset the form
+                        Swal.fire({
+                            title: "Updated!",
+                            text: "Your equipment has been updated.",
+                            icon: "success"
+                        });
+                        form.reset();  // Reset the form after successful submission
+
+                        // Navigate to the previous page or a different page after update
+                        navigate('/myequipment'); // Replace '/some-path' with the desired path
+                    } else {
+                        // If no document was modified
+                        Swal.fire({
+                            title: "Error!",
+                            text: "No changes were made or equipment not found.",
+                            icon: "error"
+                        });
+                    }
+                })
+                .catch((error) => {
+                    // Handle any network or server errors
+                    Swal.fire({
+                        title: "Error!",
+                        text: "An error occurred while updating the equipment.",
+                        icon: "error"
+                    });
+                    console.error("Error updating equipment:", error);
+                });
+            }
+        });
     };
 
     return (
         <div className="flex flex-col min-h-screen">
             <Header />
             <div className="flex-grow mt-[120px] p-4">
-                <h3 className="text-center font-bold text-3xl mb-6">Update Page</h3>
+                <h3 className="text-center font-bold text-3xl mb-6">Update Equipment</h3>
                 <div className="card bg-base-100 w-full shadow-2xl">
                     <form onSubmit={handleUpdateEquipment} className="card-body">
+                        {/* Form fields here */}
+                        {/* ... */}
+
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Image</span>
