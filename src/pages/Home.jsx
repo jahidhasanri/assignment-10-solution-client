@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Productsection from '../components/Productsection';
 import CategoriesSection from '../components/CategoriesSection';
 import TopSellingProduct from '../components/TopSellingProduct';
+import CustomerTestimonials from '../components/CustomerTestimonials';
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
             <Productsection></Productsection>
             <CategoriesSection></CategoriesSection>
             <TopSellingProduct></TopSellingProduct>
+            <CustomerTestimonials></CustomerTestimonials>
             <Footer></Footer>
         </div>
     );

@@ -9,7 +9,6 @@ const AuthProvider = ({children}) => {
     const name='rifat';
     const [user,setUser]=useState(null)
     const [loader,setLoader]=useState(true)
-    console.log(user);
 
     const handelRegistWemail=(email,password)=>{
         setLoader(true)
@@ -38,7 +37,7 @@ const AuthProvider = ({children}) => {
 
     
     const userInfo = {
-        name,user,setUser,handelRegistWemail,handelLoginWemail,handleSingOut,loader,handelLoginWithGoogle
+        name,user,setUser,handelRegistWemail,handelLoginWemail,handleSingOut,loader,setLoader,handelLoginWithGoogle
     }
 
     useEffect(() => {

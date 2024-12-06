@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "../components/PrivateRoute";
 import Error from "../pages/Error";
+import ViewDetails from "../pages/ViewDetails";
 
 const routes = createBrowserRouter([
     {
@@ -35,6 +36,12 @@ const routes = createBrowserRouter([
     {
         path:'register',
         element:<Register></Register>
+    },
+    {
+        path:'viewdetails/:id',
+        element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
+        loader:({params})=>fetch(`http://localhost:5000/equepment/${params.id}`)
+        
     }
 ])
 export default routes

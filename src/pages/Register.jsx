@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 import { IoEyeSharp } from 'react-icons/io5';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { updateProfile } from "firebase/auth";  // Import updateProfile from Firebase
 
 const Register = () => {
   const { handelRegistWemail, setUser, handelLoginWithGoogle } = useContext(AuthContext);
@@ -24,6 +25,7 @@ const Register = () => {
     const photo = e.target.photo.value;
     const password = e.target.password.value;
 
+    // Validate email and password
     if (!emailRegex.test(email)) {
       toast.error('Please enter a valid email address.');
       return;
@@ -34,14 +36,30 @@ const Register = () => {
       return;
     }
 
+    // Register user with email and password
     handelRegistWemail(email, password)
       .then((result) => {
-        setUser(result.user);
-        // updateUserProfile({ displayName: name, photoURL: photo });
-        toast.success('Registration successful!');
-        setTimeout(() => {
-          navigate('/');
-        }, 1000);
+        // Update user profile with name and photo URL after successful registration
+        updateProfile(result.user, {
+          displayName: name,
+          photoURL: photo
+        })
+        .then(() => {
+          // Set the updated user information
+          setUser({
+            ...result.user,
+            displayName: name,
+            photoURL: photo
+          });
+          toast.success('Registration successful!');
+          setTimeout(() => {
+            navigate('/');
+          }, 1000);
+        })
+        .catch((error) => {
+          console.error(error);
+          toast.error(`Failed to update profile: ${error.message}`);
+        });
       })
       .catch((error) => {
         console.error(error);
@@ -78,7 +96,13 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text">Name</span>
                 </label>
-                <input type="text" name="name" placeholder="Name" className="input input-bordered" required />
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                  className="input input-bordered"
+                  required
+                />
               </div>
               <div className="form-control">
                 <label className="label">
@@ -96,7 +120,13 @@ const Register = () => {
                 <label className="label">
                   <span className="label-text">Photo</span>
                 </label>
-                <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered" required />
+                <input
+                  type="text"
+                  name="photo"
+                  placeholder="Photo URL"
+                  className="input input-bordered"
+                  required
+                />
               </div>
               <div className="form-control relative">
                 <label className="label">

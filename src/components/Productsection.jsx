@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const ProductSection = () => {
     const [products, setProducts] = useState([]); // Initialize as an empty array
@@ -22,25 +23,21 @@ const ProductSection = () => {
                     {products.length > 0 ? (
                         products.map((product) => (
                             <div key={product._id} className="border rounded-lg shadow-lg overflow-hidden">
-                               <div>
-                                <img
-                                    src={product.img} // Assuming the image URL is in product.image
-                                    alt={product.name} // Assuming the name is in product.name
-                                    className="w-full h-[300px] p-4 rounded-2xl"
-                                />
-
-                               </div>
+                                <div>
+                                    <img
+                                        src={product.img} // Assuming the image URL is in product.img
+                                        alt={product.name} // Assuming the name is in product.name
+                                        className="w-full h-[300px] p-4 rounded-2xl"
+                                    />
+                                </div>
                                 <div className="p-4">
                                     <h3 className="text-xl font-semibold text-gray-800">{product.name}</h3>
                                     <p className="text-gray-600">{product.description}</p>
                                     <div className="mt-4 flex justify-between items-center">
                                         <span className="text-lg font-bold text-gray-800">${product.price}</span>
-                                        <button
-                                            onClick={() => alert(`Viewing details of ${product.name}`)}
-                                            className="bg-blue-600 text-white py-2 px-4 rounded"
-                                        >
+                                        <Link to={`/viewdetails/${product._id}`} className="bg-blue-600 text-white py-2 px-4 rounded">
                                             View Details
-                                        </button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
