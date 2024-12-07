@@ -1,4 +1,6 @@
 import React from 'react';
+import { FaInstagramSquare, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { IoLogoFacebook } from 'react-icons/io5';
 
 const Footer = () => {
     return (
@@ -8,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-wrap justify-between items-center">
           {/* Website Name */}
           <div className="w-full sm:w-1/4 mb-4 sm:mb-0">
-            <h2 className="text-2xl font-bold">EquiSports</h2>
+            <h2 className="text-2xl font-bold">Sports Zone</h2>
             <p className="text-sm mt-2">The best place for all your sports gear needs!</p>
           </div>
 
@@ -27,23 +29,23 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-2">Follow Us</h3>
             <div className="flex space-x-4 text-lg">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
-                <i className="fab fa-facebook"></i>
+              <IoLogoFacebook />
               </a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
-                <i className="fab fa-twitter"></i>
+              <FaTwitter />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-pink-500">
-                <i className="fab fa-instagram"></i>
+              <FaInstagramSquare />
               </a>
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-700">
-                <i className="fab fa-linkedin"></i>
+              <FaLinkedin />
               </a>
             </div>
           </div>
         </div>
 
         {/* Copyright Section */}
-        <div className="text-center mt-6 text-sm">
+        <div className="text-center mt-10 text-sm">
           <p>&copy; {new Date().getFullYear()} EquiSports. All rights reserved.</p>
         </div>
       </div>

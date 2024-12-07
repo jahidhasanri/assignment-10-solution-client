@@ -112,8 +112,10 @@ const Header = () => {
               />
             </div>
           ) : (
+            <div className="flex gap-3 items-center">
+
             <div>
-              <NavLink to="/login" className="btn xl:mr-[60px]"
+              <NavLink to="/login" className="btn "
                data-tooltip-id={'tooltip'}
                data-tooltip-content="Click to Login" >
                 Login
@@ -123,6 +125,23 @@ const Header = () => {
                place="bottom" 
               />
             </div>
+
+            <div>
+              <NavLink to="/register" className="btn xl:mr-[60px]"
+               data-tooltip-id={'tooltip'}
+               data-tooltip-content="Click to Register" >
+                Register
+              </NavLink>
+              <Tooltip id={'tooltip'}
+               className="mt-12 bg-gray-800 text-white p-2 rounded shadow-lg"
+               place="bottom" 
+              />
+            </div>
+
+
+            </div>
+
+            
           )}
         </div>
       </div>

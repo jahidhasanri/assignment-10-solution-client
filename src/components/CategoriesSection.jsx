@@ -6,7 +6,7 @@ const CategoriesSection = ({ darkTheme }) => {
             <section className={`py-12 mt-4 ${darkTheme ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-900'}`}>
                 <div className="container mx-auto text-center">
                     <h2 className="text-3xl font-semibold mb-10">Sports Categories</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-14">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 md:mr-4 md:ml-4 xl:grid-cols-3 lg:grid-cols-4 gap-14">
                         {/* Category 1 */}
                         <div>
                             <h3 className="text-2xl font-semibold mb-4">Cricket</h3>
