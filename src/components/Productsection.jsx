@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Tooltip } from 'react-tooltip';
 
 const ProductSection = () => {
     const [products, setProducts] = useState([]); // Initialize as an empty array
@@ -16,7 +17,7 @@ const ProductSection = () => {
     }, []);
 
     return (
-        <div className="py-12 bg-gray-50  className={`p-4 ${darkTheme ? 'bg-gray-800 text-white' : 'bg-gray-100 text-gray-900'}`}">
+        <div className={`p-4 bg-gray-50`}>
             <div className="container mx-auto text-center">
                 <h2 className="text-3xl font-semibold text-gray-800 mb-8">Product Section</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
@@ -35,9 +36,16 @@ const ProductSection = () => {
                                     <p className="text-gray-600">{product.description}</p>
                                     <div className="mt-4 flex justify-between items-center">
                                         <span className="text-lg font-bold text-gray-800">${product.price}</span>
-                                        <Link to={`/viewdetails/${product._id}`} className="bg-blue-600 text-white py-2 px-4 rounded">
+                                        <Link
+                                            to={`/viewdetails/${product._id}`}
+                                            className="bg-blue-600 text-white py-2 px-4 rounded"
+                                            data-tooltip-id={`tooltip-${product._id}`}
+                                            data-tooltip-content="Click to see product details"
+                                        >
                                             View Details
                                         </Link>
+                                        {/* Tooltip Component */}
+                                        <Tooltip id={`tooltip-${product._id}`} />
                                     </div>
                                 </div>
                             </div>

@@ -4,7 +4,9 @@ import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { AuthContext } from "../AuthProvider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import './header.css'
+import "./header.css";
+import { Tooltip } from 'react-tooltip';
+import { Flip } from "react-awesome-reveal";
 
 const Header = () => {
   const { user, handleSingOut, setUser } = useContext(AuthContext);
@@ -47,12 +49,12 @@ const Header = () => {
     >
       <div className="w-full flex justify-between items-center">
         <div>
-          <h1
-            to="/"
-            className="text-2xl font-bold md:ml-[80px] lg:ml-[20px] xl:ml-[60px]"
-          >
+        <Flip>
+          <h1 className="text-2xl font-bold md:ml-[80px] lg:ml-[20px] xl:ml-[60px]">
             Sports Zone
           </h1>
+
+        </Flip>
         </div>
 
         {/* Desktop Menu */}
@@ -81,37 +83,45 @@ const Header = () => {
         {/* User Info / Login */}
         <div className="hidden lg:block">
           {user ? (
-            <div
-              className="relative flex items-center space-x-3"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
+            <div className="relative flex items-center space-x-3">
               <img
                 src={user.photoURL || "/default-avatar.png"}
                 alt="User Avatar"
                 className="w-8 h-8 rounded-full"
-                title={user.displayName || "Guest User"}
+                // title={user.displayName || "Guest User"}
+                onMouseEnter={() => setIsHovered(true)} // হোভার করার জন্য
+                onMouseLeave={() => setIsHovered(false)} // হোভার থেকে বের হলে
               />
+              {isHovered && (
+                <div className="absolute bg-white text-black rounded p-2 mt-28 shadow-lg">
+                  <p className="text-sm">{user.displayName || "Guest User"}</p>
+                </div>
+              )}
+
               <button
                 onClick={handleLogout}
-                className="btn xl:mr-[60px] hover:bg-red-500"
+                className="btn ml-10 xl:mr-[60px] hover:bg-red-500"
+                data-tooltip-id={'tooltip'}
+                data-tooltip-content="Click to Log Out"
               >
                 Log Out
               </button>
-              {isHovered && (
-                <div className="absolute bg-white text-black rounded p-2 mt-[120px] shadow-lg ">
-                  <p className="text-sm ">{user.displayName || "Guest User"}</p>
-                </div>
-              )}
+              <Tooltip id={'tooltip'}
+              className="mt-12 bg-gray-800 text-white p-2 rounded shadow-lg "
+               place="bottom"
+              />
             </div>
           ) : (
             <div>
-              <NavLink to="/login" className="btn xl:mr-[60px]">
+              <NavLink to="/login" className="btn xl:mr-[60px]"
+               data-tooltip-id={'tooltip'}
+               data-tooltip-content="Click to Login" >
                 Login
               </NavLink>
-              {/* <NavLink to="/register" className="btn">
-                Register
-              </NavLink> */}
+              <Tooltip id={'tooltip'}
+               className="mt-12 bg-gray-800 text-white p-2 rounded shadow-lg"
+               place="bottom" 
+              />
             </div>
           )}
         </div>
@@ -157,9 +167,6 @@ const Header = () => {
                 <NavLink to="/login" className="btn mb-2">
                   Login
                 </NavLink>
-                {/* <NavLink to="/register" className="btn">
-                  Register
-                </NavLink> */}
               </>
             )}
           </div>
