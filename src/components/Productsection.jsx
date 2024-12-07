@@ -30,7 +30,7 @@ const ProductSection = () => {
     };
 
     return (
-        <div className="p-4 bg-gray-50">
+        <div className="p-4 ">
             <div className="container mx-auto text-center">
                 <h2 className="text-3xl font-semibold text-gray-800 mb-8">Product Section</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">

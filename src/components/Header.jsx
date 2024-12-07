@@ -8,12 +8,34 @@ import "./header.css";
 import { Tooltip } from 'react-tooltip';
 import { Flip } from "react-awesome-reveal";
 
-const Header = () => {
+const Header = ({setHomeTheme}) => {
   const { user, handleSingOut, setUser } = useContext(AuthContext);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const htmlElement = document.querySelector("html");
+    htmlElement.setAttribute("data-theme", theme);
+    if (theme === "dark") {
+      document.body.classList.add("bg-gray-900", "text-white");
+      document.body.classList.remove("bg-white", "text-black");
+    } else {
+      document.body.classList.add("bg-white", "text-black");
+      document.body.classList.remove("bg-gray-900", "text-white");
+    }
+  }, [theme]);
+
+  const toggleTheme = (e) => {
+    const newTheme = e.target.checked ? "dark" : "light";
+    setTheme(newTheme);
+    setHomeTheme(newTheme); // Update home theme
+  };
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -47,7 +69,27 @@ const Header = () => {
         isScrolled ? "bg-gray-400 text-white" : "bg-slate-200"
       }`}
     >
+
       <div className="w-full flex justify-between items-center">
+      <label className="swap swap-rotate">
+          <input type="checkbox" onChange={toggleTheme} />
+          <svg
+            className="swap-on h-8 w-8 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
+          </svg>
+          <svg
+            className="swap-off h-8 w-8 fill-current"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+          >
+            <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73,8.15,8.15,0,0,1-6.15-8.1,8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Z" />
+          </svg>
+        </label>
+
+        
         <div>
         <Flip>
           <h1 className="text-2xl font-bold md:ml-[80px] lg:ml-[20px] xl:ml-[60px]">
