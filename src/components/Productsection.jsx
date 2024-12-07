@@ -23,15 +23,15 @@ const ProductSection = () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
                     {products.length > 0 ? (
                         products.map((product) => (
-                            <div key={product._id} className="border rounded-lg shadow-lg overflow-hidden">
+                            <div key={product._id} className=" p-4 flex flex-col justify-between border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-90 hover:shadow-xl">
                                 <div>
                                     <img
                                         src={product.img} // Assuming the image URL is in product.img
                                         alt={product.name} // Assuming the name is in product.name
-                                        className="w-full h-[300px] p-4 rounded-2xl"
+                                        className="w-full h-[380px] p-4 rounded-2xl "
                                     />
                                 </div>
-                                <div className="p-4">
+                                <div className="p-4 text-start">
                                     <h3 className="text-xl font-semibold text-gray-800">{product.name}</h3>
                                     <p className="text-gray-600">{product.description}</p>
                                     <div className="mt-4 flex justify-between items-center">

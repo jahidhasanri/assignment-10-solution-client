@@ -9,12 +9,14 @@ const TopSellingProduct = ({ darkTheme }) => {
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     {/* Product 1 */}
-                    <div className={`border rounded-lg shadow-lg overflow-hidden ${darkTheme ? 'bg-gray-800' : 'bg-white'}`}>
+                    <div
+                        className={`border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl ${darkTheme ? 'bg-gray-800' : 'bg-white'}`}
+                    >
                         <div>
-                            <img 
-                                src="https://i.ibb.co.com/18gTYfH/pngtree-green-transparent-sports-shoes-png-image-6687298.png" 
-                                alt="Top Seller 1" 
-                                className="w-full h-[300px] p-2" 
+                            <img
+                                src="https://i.ibb.co/18gTYfH/pngtree-green-transparent-sports-shoes-png-image-6687298.png"
+                                alt="Top Seller 1"
+                                className="w-full h-[300px] p-2"
                             />
                         </div>
                         <div className="p-4">
@@ -32,12 +34,14 @@ const TopSellingProduct = ({ darkTheme }) => {
                     </div>
 
                     {/* Product 2 */}
-                    <div className={`border rounded-lg shadow-lg overflow-hidden ${darkTheme ? 'bg-gray-800' : 'bg-white'}`}>
+                    <div
+                        className={`border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl ${darkTheme ? 'bg-gray-800' : 'bg-white'}`}
+                    >
                         <div>
-                            <img 
-                                src="https://i.ibb.co.com/rykpx0L/0e9ed7a401e6559716d613fa35a374df.jpg" 
-                                alt="Top Seller 2" 
-                                className="w-full h-[300px] p-2 rounded-xl" 
+                            <img
+                                src="https://i.ibb.co/rykpx0L/0e9ed7a401e6559716d613fa35a374df.jpg"
+                                alt="Top Seller 2"
+                                className="w-full h-[300px] p-2 rounded-xl"
                             />
                         </div>
                         <div className="p-4">
@@ -55,12 +59,14 @@ const TopSellingProduct = ({ darkTheme }) => {
                     </div>
 
                     {/* Product 3 */}
-                    <div className={`border rounded-lg shadow-lg overflow-hidden ${darkTheme ? 'bg-gray-800' : 'bg-white'}`}>
+                    <div
+                        className={`border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl ${darkTheme ? 'bg-gray-800' : 'bg-white'}`}
+                    >
                         <div>
-                            <img 
-                                src="https://i.ibb.co.com/PC51FGC/6621843ab480e820450d08d2-personalised-football-kit-for-kids-mens.jpg" 
-                                alt="Top Seller 3" 
-                                className="w-full h-[300px] p-2 rounded-xl" 
+                            <img
+                                src="https://i.ibb.co/PC51FGC/6621843ab480e820450d08d2-personalised-football-kit-for-kids-mens.jpg"
+                                alt="Top Seller 3"
+                                className="w-full h-[300px] p-2 rounded-xl"
                             />
                         </div>
                         <div className="p-4">
@@ -78,12 +84,14 @@ const TopSellingProduct = ({ darkTheme }) => {
                     </div>
 
                     {/* Product 4 */}
-                    <div className={`border rounded-lg shadow-lg overflow-hidden ${darkTheme ? 'bg-gray-800' : 'bg-white'}`}>
+                    <div
+                        className={`border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl ${darkTheme ? 'bg-gray-800' : 'bg-white'}`}
+                    >
                         <div>
-                            <img 
-                                src="https://i.ibb.co.com/9qbYGNN/Bab-102435.jpg" 
-                                alt="Top Seller 4" 
-                                className="w-full h-[300px] p-2 rounded-xl" 
+                            <img
+                                src="https://i.ibb.co/9qbYGNN/Bab-102435.jpg"
+                                alt="Top Seller 4"
+                                className="w-full h-[300px] p-2 rounded-xl"
                             />
                         </div>
                         <div className="p-4">

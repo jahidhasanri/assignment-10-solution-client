@@ -31,7 +31,7 @@ const ViewDetails = () => {
                     <img
                         src={product.img} // Assuming the image URL is in product.img
                         alt={product.itemName}
-                        className="w-full h-[300px] "
+                        className="w-full h-[350px]  object-contain"
                     />
 
                     </div>

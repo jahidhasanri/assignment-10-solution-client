@@ -43,7 +43,7 @@ const Header = () => {
 
   return (
     <div
-      className={`fixed top-0 w-full z-50 p-6 transition-colors duration-300 ${
+      className={`fixed top-0 w-full z-50 p-6 transition-colors duration-300 mb-2 ${
         isScrolled ? "bg-gray-400 text-white" : "bg-slate-200"
       }`}
     >

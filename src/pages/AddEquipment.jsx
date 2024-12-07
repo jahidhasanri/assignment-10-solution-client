@@ -2,11 +2,12 @@ import React, { useContext } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { AuthContext } from "../AuthProvider";
-import { data } from "react-router-dom";
+import { data, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const AddEquipment = () => {
   const { user } = useContext(AuthContext);
+  const navigate=useNavigate();
 
   const handleAddEquipment = (e) => {
     e.preventDefault();
@@ -37,6 +38,9 @@ const AddEquipment = () => {
     if(data.insertedId){
       toast.success('data added successfully')
       form.reset();
+      setTimeout(() => {
+        navigate('/myequipment');
+      }, 2000);
     }
    })
   };
