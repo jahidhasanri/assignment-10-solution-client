@@ -39,13 +39,13 @@ const Register = () => {
     // Register user with email and password
     handelRegistWemail(email, password)
       .then((result) => {
-        // Update user profile with name and photo URL after successful registration
+       
         updateProfile(result.user, {
           displayName: name,
           photoURL: photo
         })
         .then(() => {
-          // Set the updated user information
+          
           setUser({
             ...result.user,
             displayName: name,

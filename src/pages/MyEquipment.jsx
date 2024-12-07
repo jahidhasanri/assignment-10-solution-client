@@ -10,7 +10,7 @@ const MyEquipment = () => {
     const { user, loader, setLoader } = useContext(AuthContext);
 
     const loggedInUserEmail = user?.email;
-    console.log(loggedInUserEmail);
+   
 
     // Fetch the user's equipment
     useEffect(() => {

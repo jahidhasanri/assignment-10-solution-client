@@ -24,7 +24,6 @@ const AddEquipment = () => {
    const useremail= user?.email;
    const username=user?.displayName;
    const allinformation={img,itemName,categoryName,description,price,rating,customization,processingTime,stockStatus,useremail,username}
-   console.log(allinformation);
    fetch('https://assignment-10-solution-server.vercel.app/equepment',{
     method:"POST",
     headers:{
@@ -34,7 +33,6 @@ const AddEquipment = () => {
    })
    .then((res)=> res.json())
    .then((data)=>{
-    console.log(data);
     if(data.insertedId){
       toast.success('data added successfully')
       form.reset();
@@ -47,7 +45,7 @@ const AddEquipment = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Header */}
+     
       <Header />
 
       <div className="w-11/12 mx-auto  flex-grow text-black mt-[150px] p-4">

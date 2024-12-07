@@ -6,13 +6,13 @@ import Swal from 'sweetalert2';
 
 const Update = () => {
     const user = useLoaderData();
-    const navigate = useNavigate(); // Initialize useNavigate hook
+    const navigate = useNavigate(); 
 
     const handleUpdateEquipment = (e) => {
         e.preventDefault();
         const form = e.target;
 
-        // Collect form data
+       
         const img = form.image.value;
         const itemName = form.itemName.value; 
         const categoryName = form.categoryName.value; 
@@ -26,7 +26,6 @@ const Update = () => {
         const username = user?.username;
         
         const allinformation = { img, itemName, categoryName, description, price, rating, customization, processingTime, stockStatus, useremail, username };
-        console.log(allinformation);
 
         // Show confirmation alert
         Swal.fire({
@@ -39,7 +38,7 @@ const Update = () => {
             confirmButtonText: "Yes, update it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                // Send the data to the server to update the equipment
+                
                 fetch(`https://assignment-10-solution-server.vercel.app/equepment/${user._id}`, {
                     method: "PUT",
                     headers: {
@@ -56,12 +55,11 @@ const Update = () => {
                             text: "Your equipment has been updated.",
                             icon: "success"
                         });
-                        form.reset();  // Reset the form after successful submission
+                        form.reset();  
 
-                        // Navigate to the previous page or a different page after update
-                        navigate('/myequipment'); // Replace '/some-path' with the desired path
+                        navigate('/myequipment'); 
                     } else {
-                        // If no document was modified
+                        
                         Swal.fire({
                             title: "Error!",
                             text: "No changes were made or equipment not found.",
@@ -89,8 +87,7 @@ const Update = () => {
                 <h3 className="text-center font-bold text-3xl mb-6">Update Equipment</h3>
                 <div className="card bg-base-100 w-full shadow-2xl">
                     <form onSubmit={handleUpdateEquipment} className="card-body">
-                        {/* Form fields here */}
-                        {/* ... */}
+                        
 
                         <div className="form-control">
                             <label className="label">
@@ -101,7 +98,7 @@ const Update = () => {
                                 name="image"
                                 placeholder="Image URL"
                                 className="input input-bordered"
-                                defaultValue={user?.img || ''} // Display the user's image URL if available
+                                defaultValue={user?.img || ''} 
                             />
                         </div>
                         <div className="form-control">
@@ -113,7 +110,7 @@ const Update = () => {
                                 name="itemName"
                                 placeholder="Item Name"
                                 className="input input-bordered"
-                                defaultValue={user?.itemName || ''} // Display the user's itemName if available
+                                defaultValue={user?.itemName || ''} 
                             />
                         </div>
                         <div className="form-control">
@@ -125,7 +122,7 @@ const Update = () => {
                                 name="categoryName"
                                 placeholder="Category Name"
                                 className="input input-bordered"
-                                defaultValue={user?.categoryName || ''} // Display the user's categoryName if available
+                                defaultValue={user?.categoryName || ''} 
                             />
                         </div>
                         <div className="form-control">
@@ -136,7 +133,7 @@ const Update = () => {
                                 name="description"
                                 placeholder="Description"
                                 className="textarea textarea-bordered"
-                                defaultValue={user?.description || ''} // Display the user's description if available
+                                defaultValue={user?.description || ''} 
                             ></textarea>
                         </div>
                         <div className="form-control">
@@ -148,7 +145,7 @@ const Update = () => {
                                 name="price"
                                 placeholder="Price"
                                 className="input input-bordered"
-                                defaultValue={user?.price || ''} // Display the user's price if available
+                                defaultValue={user?.price || ''} 
                             />
                         </div>
                         <div className="form-control">
@@ -163,7 +160,7 @@ const Update = () => {
                                 step="0.1"
                                 min="0"
                                 max="5"
-                                defaultValue={user?.rating || ''} // Display the user's rating if available
+                                defaultValue={user?.rating || ''} 
                             />
                         </div>
                         <div className="form-control">
@@ -175,7 +172,7 @@ const Update = () => {
                                 name="customization"
                                 placeholder="e.g., bat with extra grip"
                                 className="input input-bordered"
-                                defaultValue={user?.customization || ''} // Display the user's customization if available
+                                defaultValue={user?.customization || ''} 
                             />
                         </div>
                         <div className="form-control">
@@ -187,7 +184,7 @@ const Update = () => {
                                 name="processingTime"
                                 placeholder="Processing Time (e.g., 3-5 days)"
                                 className="input input-bordered"
-                                defaultValue={user?.processingTime || ''} // Display the user's processingTime if available
+                                defaultValue={user?.processingTime || ''} 
                             />
                         </div>
                         <div className="form-control">
@@ -199,7 +196,7 @@ const Update = () => {
                                 name="stockStatus"
                                 placeholder="Available product quantity"
                                 className="input input-bordered"
-                                defaultValue={user?.stockStatus || ''} // Display the user's stockStatus if available
+                                defaultValue={user?.stockStatus || ''}
                             />
                         </div>
                         <div className="form-control">
@@ -209,7 +206,7 @@ const Update = () => {
                             <input
                                 type="email"
                                 name="userEmail"
-                                value={user?.useremail || ''} // Display the user's email if available
+                                value={user?.useremail || ''} 
                                 className="input input-bordered"
                                 readOnly
                             />
@@ -221,7 +218,7 @@ const Update = () => {
                             <input
                                 type="text"
                                 name="userName"
-                                value={user?.username || ''} // Display the user's displayName if available
+                                value={user?.username || ''} 
                                 className="input input-bordered"
                                 readOnly
                             />

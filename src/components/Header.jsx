@@ -80,7 +80,7 @@ const Header = () => {
           </button>
         </div>
 
-        {/* User Info / Login */}
+        
         <div className="hidden lg:block">
           {user ? (
             <div className="relative flex items-center space-x-3">
@@ -88,9 +88,9 @@ const Header = () => {
                 src={user.photoURL || "/default-avatar.png"}
                 alt="User Avatar"
                 className="w-8 h-8 rounded-full"
-                // title={user.displayName || "Guest User"}
-                onMouseEnter={() => setIsHovered(true)} // হোভার করার জন্য
-                onMouseLeave={() => setIsHovered(false)} // হোভার থেকে বের হলে
+               
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)} 
               />
               {isHovered && (
                 <div className="absolute bg-white text-black rounded p-2 mt-28 shadow-lg">

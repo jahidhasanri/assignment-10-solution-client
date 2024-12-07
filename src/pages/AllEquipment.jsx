@@ -6,17 +6,17 @@ import { Link, useLoaderData } from 'react-router-dom';
 const AllEquipment = () => {
     const users = useLoaderData();
     const [sortedUsers, setSortedUsers] = useState(users);
-    const [sortOrder, setSortOrder] = useState('asc'); // default sort order
+    const [sortOrder, setSortOrder] = useState('asc');
 
-    // Function to toggle sort order and sort users by price
+   
     const toggleSort = () => {
         const newSortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
         setSortOrder(newSortOrder);
         const sortedData = [...users].sort((a, b) => {
             if (newSortOrder === 'asc') {
-                return a.price - b.price; // ascending order
+                return a.price - b.price; 
             } else {
-                return b.price - a.price; // descending order
+                return b.price - a.price; 
             }
         });
         setSortedUsers(sortedData);
@@ -24,7 +24,6 @@ const AllEquipment = () => {
 
     return (
         <div className="flex flex-col min-h-screen">
-            {/* Header */}
             <Header />
 
             {/* Main Content */}

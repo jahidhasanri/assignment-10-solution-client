@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import { useParams } from 'react-router-dom';
 
 const ViewDetails = () => {
-    const { id } = useParams(); // Get product ID from URL
+    const { id } = useParams();
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
@@ -18,7 +18,7 @@ const ViewDetails = () => {
             });
     }, [id]);
 
-    if (!product) return <p>Loading...</p>; // Show loading message while data is being fetched
+    if (!product) return <p>Loading...</p>; 
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -29,7 +29,7 @@ const ViewDetails = () => {
                     {/* Product Image */}
                     <div>
                     <img
-                        src={product.img} // Assuming the image URL is in product.img
+                        src={product.img} 
                         alt={product.itemName}
                         className="w-full h-[350px]  object-contain"
                     />

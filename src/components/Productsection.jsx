@@ -4,27 +4,27 @@ import { Tooltip } from 'react-tooltip';
 import { AuthContext } from '../AuthProvider';
 
 const ProductSection = () => {
-    const { user } = useContext(AuthContext); // Get user info from AuthContext
-    const navigate = useNavigate(); // React Router's navigate hook
-    const [products, setProducts] = useState([]); // Initialize products as empty array
+    const { user } = useContext(AuthContext); 
+    const navigate = useNavigate(); 
+    const [products, setProducts] = useState([]); 
 
     useEffect(() => {
         fetch('https://assignment-10-solution-server.vercel.app/equepment')
-            .then((res) => res.json()) // Handle JSON response
+            .then((res) => res.json()) 
             .then((data) => {
-                setProducts(data); // Set products to state
+                setProducts(data); 
             })
             .catch((error) => {
-                console.error("Error fetching data:", error); // Handle errors
+                console.error("Error fetching data:", error); 
             });
     }, []);
 
     const handleViewDetails = (id) => {
         if (user) {
-            // User is logged in, navigate to product details page
+            
             navigate(`/viewdetails/${id}`);
         } else {
-            // User is not logged in, redirect to login page
+            
             navigate('/login');
         }
     };
@@ -50,7 +50,7 @@ const ProductSection = () => {
                                     <div className="mt-4 flex justify-between items-center">
                                         <span className="text-lg font-bold text-gray-800">${product.price}</span>
                                         <button
-                                            onClick={() => handleViewDetails(product._id)} // Conditional redirect
+                                            onClick={() => handleViewDetails(product._id)} 
                                             className="bg-blue-600 text-white py-2 px-4 rounded"
                                             data-tooltip-id={`tooltip-${product._id}`}
                                             data-tooltip-content="Click to see product details"
