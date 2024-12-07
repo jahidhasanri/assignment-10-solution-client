@@ -7,7 +7,7 @@ const TopSellingProduct = ({ darkTheme }) => {
                 <h2 className={`text-3xl font-semibold ${darkTheme ? 'text-gray-100' : 'text-gray-800'} mb-8`}>
                     Top Selling Products
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 md:mr-3 md:ml-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 mr-3 ml-4">
                     {/* Product 1 */}
                     <div
                         className={`border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl ${darkTheme ? 'bg-gray-800' : 'bg-white'}`}

@@ -8,7 +8,7 @@ const ViewDetails = () => {
     const [product, setProduct] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/equepment/${id}`)
+        fetch(`https://assignment-10-solution-server.vercel.app/equepment/${id}`)
             .then((res) => res.json())
             .then((data) => {
                 setProduct(data);

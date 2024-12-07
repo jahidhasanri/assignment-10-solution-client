@@ -25,7 +25,7 @@ const AddEquipment = () => {
    const username=user?.displayName;
    const allinformation={img,itemName,categoryName,description,price,rating,customization,processingTime,stockStatus,useremail,username}
    console.log(allinformation);
-   fetch('http://localhost:5000/equepment',{
+   fetch('https://assignment-10-solution-server.vercel.app/equepment',{
     method:"POST",
     headers:{
       "content-type":"application/json"

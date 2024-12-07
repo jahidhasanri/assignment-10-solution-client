@@ -9,7 +9,7 @@ const ProductSection = () => {
     const [products, setProducts] = useState([]); // Initialize products as empty array
 
     useEffect(() => {
-        fetch('http://localhost:5000/equepment')
+        fetch('https://assignment-10-solution-server.vercel.app/equepment')
             .then((res) => res.json()) // Handle JSON response
             .then((data) => {
                 setProducts(data); // Set products to state

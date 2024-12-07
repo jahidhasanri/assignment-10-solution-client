@@ -40,7 +40,7 @@ const Update = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 // Send the data to the server to update the equipment
-                fetch(`http://localhost:5000/equepment/${user._id}`, {
+                fetch(`https://assignment-10-solution-server.vercel.app/equepment/${user._id}`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json"

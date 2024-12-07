@@ -19,7 +19,7 @@ const routes = createBrowserRouter([
     {
         path:'/allequipment',
         element:<AllEquipment></AllEquipment>,
-        loader: ()=> fetch('http://localhost:5000/equepments')
+        loader: ()=> fetch('https://assignment-10-solution-server.vercel.app/equepments')
     },
     {
         path:'/addequipment',
@@ -41,13 +41,13 @@ const routes = createBrowserRouter([
     {
         path:'viewdetails/:id',
         element:<PrivateRoute><ViewDetails></ViewDetails></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/equepment/${params.id}`)
+        loader:({params})=>fetch(`https://assignment-10-solution-server.vercel.app/equepment/${params.id}`)
         
     },
     {
         path:'update/:id',
         element:<PrivateRoute><Update></Update></PrivateRoute>,
-        loader:({params})=>fetch(`http://localhost:5000/equepment/${params.id}`)
+        loader:({params})=>fetch(`https://assignment-10-solution-server.vercel.app/equepment/${params.id}`)
     }
 
 ])

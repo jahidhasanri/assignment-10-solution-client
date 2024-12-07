@@ -15,7 +15,7 @@ const MyEquipment = () => {
     // Fetch the user's equipment
     useEffect(() => {
         if (loggedInUserEmail) {
-            fetch(`http://localhost:5000/myequepment?email=${loggedInUserEmail}`)
+            fetch(`https://assignment-10-solution-server.vercel.app/myequepment?email=${loggedInUserEmail}`)
                 .then((res) => res.json())
                 .then((data) => {
                     setMyEquipment(data);
@@ -41,7 +41,7 @@ const MyEquipment = () => {
         })
         .then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/equepment/${_id}`, {
+                fetch(`https://assignment-10-solution-server.vercel.app/equepment/${_id}`, {
                     method: 'DELETE',
                 })
                     .then((res) => res.json())
