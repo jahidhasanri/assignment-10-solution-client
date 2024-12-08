@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 const Slider = () => {
   return (
     <Swiper
-      className="w-[300px] h-[400px] pt-[100px] md:w-11/12 xl:w-[1400px] lg:h-[700px] mx-auto border mt-20 "
+      className="w-[300px] h-[400px] pt-[100px] md:w-11/12 xl:w-[1400px] lg:h-[700px] mx-auto  mt-20 "
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={1}
@@ -16,7 +16,7 @@ const Slider = () => {
       pagination={{ clickable: true }}
     >
       <SwiperSlide>
-        <div className="w-full h-full bg-white">
+        <div className="w-full h-full bg-white mt-5">
           <img
             className="w-full h-full"
             src="https://i.ibb.co.com/S7Vp3N9/sports-equipment-assorted-including-basketball-soccer-ball-tennis-ball-baseball-tennis-racket-footba.webp"
@@ -25,7 +25,7 @@ const Slider = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="w-full h-full bg-white">
+        <div className="w-full h-full bg-white mt-5">
           <img
             className="w-full h-full"
             src="https://i.ibb.co.com/bFDVBF4/istockphoto-499130315-612x612.jpg"
@@ -34,7 +34,7 @@ const Slider = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="w-full h-full bg-white">
+        <div className="w-full h-full bg-white mt-5">
           <img
             className="w-full h-full"
             src="https://i.ibb.co.com/Jm6ZKyK/pngtree-most-used-sports-equipment-in-new-hampshire-image-13169643.png"
@@ -43,7 +43,7 @@ const Slider = () => {
         </div>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="w-full h-[400px] lg:h-full bg-white">
+        <div className="w-full h-[400px] lg:h-full bg-white mt-5">
           <img
             className="w-full h-[400px] bg-cover lg:h-full"
             src="https://i.ibb.co.com/TkgcZVG/Gym-Slider.jpg"
