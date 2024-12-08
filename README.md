@@ -1,6 +1,6 @@
 # EquiSports: A Sports Equipment Store
 
-## Features ->
+## live link url ->
  https://assignment-10-solution.web.app/
 
 EquiSports is a modern, responsive e-commerce platform for purchasing and managing sports equipment. Designed with simplicity and user experience in mind, it caters to sports enthusiasts looking for a seamless online shopping experience.
