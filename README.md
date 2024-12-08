@@ -1,6 +1,7 @@
 # EquiSports: A Sports Equipment Store
 
-[Live Site URL](https://equisports.web.app)
+## Features ->
+ https://assignment-10-solution.web.app/
 
 EquiSports is a modern, responsive e-commerce platform for purchasing and managing sports equipment. Designed with simplicity and user experience in mind, it caters to sports enthusiasts looking for a seamless online shopping experience.
 
@@ -70,9 +71,4 @@ EquiSports is a modern, responsive e-commerce platform for purchasing and managi
 
 ---
 
-## Installation and Setup
 
-1. Clone the repository.  
-   ```bash
-   git clone https://github.com/yourusername/equisports.git
-   cd equisports
