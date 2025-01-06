@@ -10,7 +10,6 @@ const MyEquipment = () => {
     const { user, loader, setLoader } = useContext(AuthContext);
 
     const loggedInUserEmail = user?.email;
-   
 
     // Fetch the user's equipment
     useEffect(() => {
@@ -86,42 +85,49 @@ const MyEquipment = () => {
                 ) : myEquipment.length === 0 ? (
                     <p>No equipment found.</p>
                 ) : (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:w-11/12 mx-auto">
-                        {myEquipment.map((equipment) => (
-                            <div
-                                key={equipment._id}
-                                className="border rounded-lg shadow p-4 flex flex-col justify-between"
-                            >
-                                <div>
-                                    <img
-                                        src={equipment.img}
-                                        alt={equipment.itemName}
-                                        className="w-[450px] h-[350px] mb-4 rounded text-center mx-auto"
-                                    />
-                                    <h3 className="text-xl font-semibold">{equipment.itemName}</h3>
-                                    <p className="text-gray-600">{equipment.description}</p>
-                                    <p className="text-gray-800 font-bold">Price: ${equipment.price}</p>
-                                    <p className="text-gray-500">Category: {equipment.categoryName}</p>
-                                    <p className="text-gray-500">User Name: {equipment.username}</p>
-                                    <p className="text-gray-500">User email: {equipment.useremail}</p>
-                                
-                                </div>
-                                <div className="mt-auto flex justify-between items-center gap-5 pt-4">
-                                    <Link
-                                        to={`/update/${equipment._id}`}
-                                        className="bg-blue-600 text-white py-2 px-6 h-10 flex items-center justify-center rounded"
-                                    >
-                                        Update
-                                    </Link>
-                                    <button
-                                        onClick={() => handelDelete(equipment._id)}
-                                        className="bg-red-600 text-white py-2 px-6 h-10 flex items-center justify-center rounded"
-                                    >
-                                        Delete
-                                    </button>
-                                </div>
-                            </div>
-                        ))}
+                    <div className="overflow-x-auto">
+                        {/* Table for Equipment */}
+                        <table className="min-w-full border-collapse table-auto">
+                            <thead className="bg-gray-100">
+                                <tr>
+                                    <th className="border p-2 text-left">Item Name</th>
+                                    <th className="border p-2 text-left">Description</th>
+                                    <th className="border p-2 text-left">Price</th>
+                                    <th className="border p-2 text-left">Category</th>
+                                    <th className="border p-2 text-left">Username</th>
+                                    <th className="border p-2 text-left">User Email</th>
+                                    <th className="border p-2 text-left">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {myEquipment.map((equipment) => (
+                                    <tr key={equipment._id} className="odd:bg-gray-50 even:bg-white">
+                                        <td className="border p-2">{equipment.itemName}</td>
+                                        <td className="border p-2">{equipment.description}</td>
+                                        <td className="border p-2">${equipment.price}</td>
+                                        <td className="border p-2">{equipment.categoryName}</td>
+                                        <td className="border p-2">{equipment.username}</td>
+                                        <td className="border p-2">{equipment.useremail}</td>
+                                        <td className="border p-2">
+                                            <div className="">
+                                                <Link
+                                                    to={`/update/${equipment._id}`}
+                                                    className="text-blue-600 hover:underline"
+                                                >
+                                                    Update
+                                                </Link>
+                                                <button
+                                                    onClick={() => handelDelete(equipment._id)}
+                                                    className="text-red-600 hover:underline"
+                                                >
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
                     </div>
                 )}
             </div>

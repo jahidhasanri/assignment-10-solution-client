@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 
 const AllEquipment = () => {
-    const users = useLoaderData();
-    const [sortedUsers, setSortedUsers] = useState(users);
-    const [sortOrder, setSortOrder] = useState('asc');
+    const users = useLoaderData(); // Initial data
+    const [sortedUsers, setSortedUsers] = useState(users); // Sorted data state
+    const [sortOrder, setSortOrder] = useState('asc'); // Sort order state
 
-   
+    // Sorting function
     const toggleSort = () => {
         const newSortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
         setSortOrder(newSortOrder);
         const sortedData = [...users].sort((a, b) => {
             if (newSortOrder === 'asc') {
-                return a.price - b.price; 
+                return a.price - b.price; // Ascending order
             } else {
-                return b.price - a.price; 
+                return b.price - a.price; // Descending order
             }
         });
         setSortedUsers(sortedData);
@@ -28,49 +28,49 @@ const AllEquipment = () => {
 
             {/* Main Content */}
             <div className="flex-grow text-black w-full mt-[150px] p-4">
-                <h2 className="text-2xl font-semibold mb-4 text-center">
+                <h2 className="text-3xl font-semibold mb-6 text-center">
                     All Equipment ({users.length})
                 </h2>
 
                 {/* Sort Button */}
-                <button
-                    onClick={toggleSort}
-                    className="mb-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700"
-                >
-                    Sort by Price ({sortOrder === 'asc' ? 'Ascending' : 'Descending'})
-                </button>
+                <div className="text-center mb-6">
+                    <button
+                        onClick={toggleSort}
+                        className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700"
+                    >
+                        Sort by Price ({sortOrder === 'asc' ? 'Ascending' : 'Descending'})
+                    </button>
+                </div>
 
-                {/* Table */}
-                <div className="overflow-x-auto">
-                    <table className="min-w-full border-collapse table-auto">
-                        <thead className="bg-gray-100">
-                            <tr>
-                                <th className="border p-2 text-left">Item Name</th>
-                                <th className="border p-2 text-left">Category</th>
-                                <th className="border p-2 text-left">Price</th>
-                                <th className="border p-2 text-left">Rating</th>
-                                <th className="border p-2 text-left">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {sortedUsers.map((product) => (
-                                <tr key={product._id} className="odd:bg-gray-50 even:bg-white">
-                                    <td className="border p-2">{product.itemName}</td>
-                                    <td className="border p-2">{product.categoryName}</td>
-                                    <td className="border p-2">${product.price}</td>
-                                    <td className="border p-2">{product.rating} ⭐</td>
-                                    <td className="border p-2">
-                                        <Link
-                                            to={`/viewdetails/${product._id}`}
-                                            className="text-blue-600 hover:underline"
-                                        >
-                                            View Details
-                                        </Link>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                {/* Cards Section */}
+                <div className="container mx-auto text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    {sortedUsers.map((product) => (
+                        <div
+                            key={product._id}
+                            className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105"
+                        >
+                            <img
+                                src={product.img}
+                                alt={product.itemName}
+                                className="w-full h-48 "
+                            />
+                            <div className="p-4">
+                                <h3 className="text-lg font-semibold mb-2">{product.itemName}</h3>
+                                <p className="text-sm text-gray-600 mb-2">
+                                    Category: {product.categoryName}
+                                </p>
+                                <p className="text-sm text-gray-800 font-semibold mb-2">
+                                    Price: ${product.price}
+                                </p>
+                                <p className="text-sm text-yellow-500 mb-4">
+                                    Rating: {product.rating} ⭐
+                                </p>
+                                <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-700">
+                                    <a href={`/viewdetails/${product._id}`}>View Details</a>
+                                </button>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
 
