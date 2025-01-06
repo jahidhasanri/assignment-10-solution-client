@@ -6,6 +6,7 @@ import Productsection from "../components/Productsection";
 import CategoriesSection from "../components/CategoriesSection";
 import TopSellingProduct from "../components/TopSellingProduct";
 import CustomerTestimonials from "../components/CustomerTestimonials";
+import Offer from "../components/Offer";
 
 const Home = () => {
   // State to store current theme
@@ -15,6 +16,7 @@ const Home = () => {
     <div className={`bg-${homeTheme === 'dark' ? 'gray-900 text-white' : 'white text-gray-900'}`}>
       <Header setHomeTheme={setHomeTheme} />
       <Slider />
+      <Offer></Offer>
       <Productsection />
       <CategoriesSection darkTheme={homeTheme === 'dark'} />
       <TopSellingProduct />

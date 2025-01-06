@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 const Slider = () => {
   return (
     <Swiper
-      className="w-[300px] h-[400px] pt-[100px] md:w-11/12 xl:w-[1400px] lg:h-[700px] mx-auto  mt-20 "
+      className="w-full h-[400px] pt-[100px] lg:h-[650px] mx-auto  mt-20 "
       modules={[Navigation, Pagination, Scrollbar, A11y]}
       spaceBetween={50}
       slidesPerView={1}
@@ -19,7 +19,7 @@ const Slider = () => {
         <div className="w-full h-full bg-white mt-5">
           <img
             className="w-full h-full"
-            src="https://i.ibb.co.com/S7Vp3N9/sports-equipment-assorted-including-basketball-soccer-ball-tennis-ball-baseball-tennis-racket-footba.webp"
+            src="https://i.ibb.co.com/8D4xNmG/freepik-upload-4417.jpg"
             alt="Slide 1"
           />
         </div>
@@ -28,7 +28,7 @@ const Slider = () => {
         <div className="w-full h-full bg-white mt-5">
           <img
             className="w-full h-full"
-            src="https://i.ibb.co.com/bFDVBF4/istockphoto-499130315-612x612.jpg"
+            src="https://i.ibb.co.com/25pmjMy/freepik-upload-85916.jpg"
             alt="Slide 2"
           />
         </div>
@@ -46,7 +46,7 @@ const Slider = () => {
         <div className="w-full h-[400px] lg:h-full bg-white mt-5">
           <img
             className="w-full h-[400px] bg-cover lg:h-full"
-            src="https://i.ibb.co.com/TkgcZVG/Gym-Slider.jpg"
+            src="https://i.ibb.co.com/rsp1rtf/top-view-composition-with-neatly-arranged-organized-sport-items.jpg"
             alt="Slide 4"
           />
         </div>

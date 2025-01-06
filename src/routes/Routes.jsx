@@ -9,6 +9,8 @@ import PrivateRoute from "../components/PrivateRoute";
 import Error from "../pages/Error";
 import ViewDetails from "../pages/ViewDetails";
 import Update from "../pages/Update";
+import Contact from "../pages/Contact";
+import AboutUs from "../pages/AboutUs";
 
 const routes = createBrowserRouter([
     {
@@ -48,6 +50,14 @@ const routes = createBrowserRouter([
         path:'update/:id',
         element:<PrivateRoute><Update></Update></PrivateRoute>,
         loader:({params})=>fetch(`https://assignment-10-solution-server.vercel.app/equepment/${params.id}`)
+    },
+    {
+        path:'/contact',
+        element:<Contact></Contact>
+    },
+    {
+        path:'/aboutus',
+        element:<AboutUs></AboutUs>
     }
 
 ])

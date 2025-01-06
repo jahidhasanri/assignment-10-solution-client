@@ -110,8 +110,14 @@ const Header = ({setHomeTheme}) => {
           <NavLink className="text-xl font-semibold mr-6" to="/addequipment">
             Add Equipment
           </NavLink>
-          <NavLink className="text-xl font-semibold" to="/myequipment">
+          <NavLink className="text-xl font-semibold mr-6" to="/myequipment">
             My Equipment List
+          </NavLink>
+          <NavLink className="text-xl font-semibold mr-6" to="/contact">
+           Contact
+          </NavLink>
+          <NavLink className="text-xl font-semibold" to="/aboutus">
+           About Us
           </NavLink>
         </div>
 

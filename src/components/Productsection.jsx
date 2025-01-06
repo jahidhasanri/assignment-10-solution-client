@@ -33,21 +33,21 @@ const ProductSection = () => {
         <div className="p-4 ">
             <div className="container mx-auto text-center">
                 <h2 className="text-3xl font-semibold text-gray-800 mb-8">Product Section</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {products.length > 0 ? (
                         products.map((product) => (
-                            <div key={product._id} className="p-4 flex flex-col justify-between border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-90 hover:shadow-xl">
+                            <div key={product._id} className="p-2 flex flex-col h-[500px] justify-between border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-95 hover:shadow-xl">
                                 <div>
                                     <img
                                         src={product.img}
                                         alt={product.name}
-                                        className="w-full h-[380px] p-4 rounded-2xl"
+                                        className="w-full h-[300px] p-2 rounded-2xl"
                                     />
                                 </div>
-                                <div className="p-4 text-start">
+                                <div className="p-2 text-start">
                                     <h3 className="text-xl font-semibold text-gray-800">{product.name}</h3>
                                     <p className="text-gray-600">{product.description}</p>
-                                    <div className="mt-4 flex justify-between items-center">
+                                    <div className="mt-2 flex justify-between items-center">
                                         <span className="text-lg font-bold text-gray-800">${product.price}</span>
                                         <button
                                             onClick={() => handleViewDetails(product._id)} 
