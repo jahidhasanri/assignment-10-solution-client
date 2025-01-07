@@ -69,9 +69,9 @@ const Header = ({setHomeTheme}) => {
         isScrolled ? "bg-gray-400 text-white" : "bg-slate-200"
       }`}
     >
-
       <div className="w-full flex justify-between items-center">
-      <label className="swap swap-rotate">
+        <div className="flex items-center justify-between">
+        <label className="swap swap-rotate">
           <input type="checkbox" onChange={toggleTheme} />
           <svg
             className="swap-on h-8 w-8 fill-current"
@@ -87,20 +87,15 @@ const Header = ({setHomeTheme}) => {
           >
             <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73,8.15,8.15,0,0,1-6.15-8.1,8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Z" />
           </svg>
+        </label>
 
-          <div>
         <Flip>
           <h1 className="text-2xl ml-10 font-bold md:ml-[80px] lg:ml-[20px] xl:ml-[50px]">
             Sports Zone
           </h1>
         </Flip>
+
         </div>
-        {/* <img src="https://i.ibb.co.com/ncPRPGv/log.jpg" className="w-20 h-20" alt="" /> */}
-
-        </label>
-
-        
-        
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex">
@@ -110,34 +105,35 @@ const Header = ({setHomeTheme}) => {
           <NavLink className="text-xl font-semibold mr-6" to="/allequipment">
             All Sports Equipment
           </NavLink>
-          {
-            user?
+          {user ? (
             <>
-          <NavLink className="text-xl font-semibold mr-6" to="/addequipment">
-            Add Equipment
-          </NavLink>
-          <NavLink className="text-xl font-semibold mr-6" to="/myequipment">
-            My Equipment List
-          </NavLink>
-            </>:
-            <></>
-          }
+              <NavLink className="text-xl font-semibold mr-6" to="/addequipment">
+                Add Equipment
+              </NavLink>
+              <NavLink className="text-xl font-semibold mr-6" to="/myequipment">
+                My Equipment List
+              </NavLink>
+            </>
+          ) : null}
           <NavLink className="text-xl font-semibold mr-6" to="/contact">
-           Contact
+            Contact
           </NavLink>
           <NavLink className="text-xl font-semibold" to="/aboutus">
-           About Us
+            About Us
           </NavLink>
         </div>
 
         {/* Mobile Menu Toggle */}
         <div className="md:mr-[80px] lg:hidden flex items-center">
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-2xl">
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="text-2xl"
+          >
             {isMenuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
           </button>
         </div>
 
-        
+        {/* User Avatar and Logout (Desktop) */}
         <div className="hidden lg:block">
           {user ? (
             <div className="relative flex items-center space-x-3">
@@ -145,9 +141,8 @@ const Header = ({setHomeTheme}) => {
                 src={user.photoURL || "/default-avatar.png"}
                 alt="User Avatar"
                 className="w-8 h-8 rounded-full"
-               
                 onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)} 
+                onMouseLeave={() => setIsHovered(false)}
               />
               {isHovered && (
                 <div className="absolute bg-white text-black rounded p-2 mt-28 shadow-lg">
@@ -164,45 +159,49 @@ const Header = ({setHomeTheme}) => {
                 Log Out
               </button>
               <Tooltip id={'tooltip'}
-              className="mt-12 bg-gray-800 text-white p-2 rounded shadow-lg "
-               place="bottom"
+                className="mt-12 bg-gray-800 text-white p-2 rounded shadow-lg"
+                place="bottom"
               />
             </div>
           ) : (
             <div className="flex gap-3 items-center">
+              <div>
+                <NavLink
+                  to="/login"
+                  className="btn"
+                  data-tooltip-id={'tooltip'}
+                  data-tooltip-content="Click to Login"
+                >
+                  Login
+                </NavLink>
+                <Tooltip
+                  id={'tooltip'}
+                  className="mt-12 bg-gray-800 text-white p-2 rounded shadow-lg"
+                  place="bottom"
+                />
+              </div>
 
-            <div>
-              <NavLink to="/login" className="btn "
-               data-tooltip-id={'tooltip'}
-               data-tooltip-content="Click to Login" >
-                Login
-              </NavLink>
-              <Tooltip id={'tooltip'}
-               className="mt-12 bg-gray-800 text-white p-2 rounded shadow-lg"
-               place="bottom" 
-              />
+              <div>
+                <NavLink
+                  to="/register"
+                  className="btn xl:mr-[60px]"
+                  data-tooltip-id={'tooltip'}
+                  data-tooltip-content="Click to Register"
+                >
+                  Register
+                </NavLink>
+                <Tooltip
+                  id={'tooltip'}
+                  className="mt-12 bg-gray-800 text-white p-2 rounded shadow-lg"
+                  place="bottom"
+                />
+              </div>
             </div>
-
-            <div>
-              <NavLink to="/register" className="btn xl:mr-[60px]"
-               data-tooltip-id={'tooltip'}
-               data-tooltip-content="Click to Register" >
-                Register
-              </NavLink>
-              <Tooltip id={'tooltip'}
-               className="mt-12 bg-gray-800 text-white p-2 rounded shadow-lg"
-               place="bottom" 
-              />
-            </div>
-
-
-            </div>
-
-            
           )}
         </div>
       </div>
 
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden mt-4 bg-orange-200 rounded-lg p-4 shadow-lg">
           <NavLink
@@ -219,29 +218,52 @@ const Header = ({setHomeTheme}) => {
           >
             All Sports Equipment
           </NavLink>
+          {user ? (
+            <>
+              <NavLink
+                className="block text-lg font-semibold mb-2"
+                to="/addequipment"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Add Equipment
+              </NavLink>
+              <NavLink
+                className="block text-lg font-semibold"
+                to="/myequipment"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                My Equipment List
+              </NavLink>
+            </>
+          ) : null}
           <NavLink
             className="block text-lg font-semibold mb-2"
-            to="/addequipment"
+            to="/contact"
             onClick={() => setIsMenuOpen(false)}
           >
-            Add Equipment
+            Contact
           </NavLink>
           <NavLink
             className="block text-lg font-semibold"
-            to="/myequipment"
+            to="/aboutus"
             onClick={() => setIsMenuOpen(false)}
           >
-            My Equipment List
+            About Us
           </NavLink>
-          <div className="mt-4">
+
+          {/* Logout or Login/Register buttons */}
+          <div className="mt-4 ">
             {user ? (
-              <button onClick={handleLogout} className="btn">
+              <button onClick={handleLogout} className="btn ">
                 Log Out
               </button>
             ) : (
               <>
-                <NavLink to="/login" className="btn mb-2">
+                <NavLink to="/login" className="btn mb-2 mr-4 md:mr-0">
                   Login
+                </NavLink>
+                <NavLink to="/register" className="btn">
+                  Register
                 </NavLink>
               </>
             )}
