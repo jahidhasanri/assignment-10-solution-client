@@ -109,7 +109,7 @@ const MyEquipment = () => {
                                         <td className="border p-2">{equipment.username}</td>
                                         <td className="border p-2">{equipment.useremail}</td>
                                         <td className="border p-2">
-                                            <div className="">
+                                            <div >
                                                 <Link
                                                     to={`/update/${equipment._id}`}
                                                     className="text-blue-600 hover:underline"

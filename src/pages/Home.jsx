@@ -7,6 +7,7 @@ import CategoriesSection from "../components/CategoriesSection";
 import TopSellingProduct from "../components/TopSellingProduct";
 import CustomerTestimonials from "../components/CustomerTestimonials";
 import Offer from "../components/Offer";
+import SportsBlog from "../components/SportsBlog";
 
 const Home = () => {
   // State to store current theme
@@ -20,6 +21,7 @@ const Home = () => {
       <Productsection />
       <CategoriesSection darkTheme={homeTheme === 'dark'} />
       <TopSellingProduct />
+      <SportsBlog></SportsBlog>
       <CustomerTestimonials />
       <Footer />
     </div>
