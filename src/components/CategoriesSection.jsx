@@ -3,9 +3,9 @@ import React from 'react';
 const CategoriesSection = () => {
     return (
         <div>
-            <section className="py-12 mt-8  text-gray-900">
+            <section className="py-12 mt-8  ">
                 <div className="container mx-auto text-center">
-                    <h2 className="text-4xl font-semibold mb-10">Sports Categories</h2>
+                    <h2 className="text-4xl font-semibold  mb-10">Sports Categories</h2>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 mr-4 ml-4 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                         {/* Category 1 */}
                         <div>

@@ -28,7 +28,7 @@ const AllEquipment = () => {
 
             {/* Main Content */}
             <div className="flex-grow text-black w-full mt-[135px] p-4">
-                <h2 className="text-3xl font-semibold mb-10 text-center">
+                <h2 className="text-3xl text-blue-800 font-bold mb-10 text-center">
                     All Equipment ({users.length})
                 </h2>
 

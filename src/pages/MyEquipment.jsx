@@ -77,7 +77,7 @@ const MyEquipment = () => {
         <div className="flex flex-col min-h-screen">
             <Header />
 
-            <div className="flex-grow text-black container mx-auto mt-[150px] p-4">
+            <div className="flex-grow  container mx-auto mt-[150px] p-4">
                 <h1 className="text-3xl font-bold mb-10 text-center">My Equipment</h1>
 
                 {loader ? (
@@ -88,7 +88,7 @@ const MyEquipment = () => {
                     <div className="overflow-x-auto">
                         {/* Table for Equipment */}
                         <table className="min-w-full border-collapse table-auto">
-                            <thead className="bg-gray-100">
+                            <thead className="bg-gray-300">
                                 <tr>
                                     <th className="border p-2 text-left">Item Name</th>
                                     <th className="border p-2 text-left">Description</th>
@@ -101,7 +101,7 @@ const MyEquipment = () => {
                             </thead>
                             <tbody>
                                 {myEquipment.map((equipment) => (
-                                    <tr key={equipment._id} className="odd:bg-gray-50 even:bg-white">
+                                    <tr key={equipment._id} className="">
                                         <td className="border p-2">{equipment.itemName}</td>
                                         <td className="border p-2">{equipment.description}</td>
                                         <td className="border p-2">${equipment.price}</td>

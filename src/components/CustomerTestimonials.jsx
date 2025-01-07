@@ -34,7 +34,7 @@ const CustomerTestimonials = () => {
 
   return (
     <div className="bg-gray-100 w-full mx-auto ">
-      <h2 className="text-center text-3xl font-bold pt-11 mb-11">Customer Testimonials</h2>
+      <h2 className="text-center text-blue-800 text-3xl font-bold pt-11 mb-11">Customer Testimonials</h2>
       <div className="container mx-auto pb-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8  ">
         {testimonials.map((customer) => (
           <div
