@@ -77,7 +77,7 @@ const MyEquipment = () => {
         <div className="flex flex-col min-h-screen">
             <Header />
 
-            <div className="flex-grow text-black w-full mt-[150px] p-4">
+            <div className="flex-grow text-black container mx-auto mt-[150px] p-4">
                 <h1 className="text-3xl font-bold mb-10 text-center">My Equipment</h1>
 
                 {loader ? (

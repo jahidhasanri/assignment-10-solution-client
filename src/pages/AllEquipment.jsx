@@ -27,13 +27,13 @@ const AllEquipment = () => {
             <Header />
 
             {/* Main Content */}
-            <div className="flex-grow text-black w-full mt-[150px] p-4">
-                <h2 className="text-3xl font-semibold mb-6 text-center">
+            <div className="flex-grow text-black w-full mt-[135px] p-4">
+                <h2 className="text-3xl font-semibold mb-10 text-center">
                     All Equipment ({users.length})
                 </h2>
 
                 {/* Sort Button */}
-                <div className="text-center mb-6">
+                <div className="text-center mb-12">
                     <button
                         onClick={toggleSort}
                         className="px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-700"
@@ -43,11 +43,11 @@ const AllEquipment = () => {
                 </div>
 
                 {/* Cards Section */}
-                <div className="container mx-auto text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div className="container mx-auto pb-11 text-center grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                     {sortedUsers.map((product) => (
                         <div
                             key={product._id}
-                            className="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform hover:scale-105"
+                            className="bg-white shadow-lg rounded-lg overflow-hidden transition-transform duration-300 transform hover:scale-95"
                         >
                             <img
                                 src={product.img}

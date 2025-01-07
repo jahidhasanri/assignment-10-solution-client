@@ -33,9 +33,9 @@ const CustomerTestimonials = () => {
   ];
 
   return (
-    <div className="bg-gray-100 py-4 mr-4 md:ml-4 lg:w-full lg:ml-0">
-      <h2 className="text-center text-3xl font-bold mb-10">Customer Testimonials</h2>
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6  ">
+    <div className="bg-gray-100 w-full mx-auto ">
+      <h2 className="text-center text-3xl font-bold pt-11 mb-11">Customer Testimonials</h2>
+      <div className="container mx-auto pb-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8  ">
         {testimonials.map((customer) => (
           <div
             key={customer.id}

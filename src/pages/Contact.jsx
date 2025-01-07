@@ -29,7 +29,7 @@ const Contact = () => {
         <div>
             <Header />
             <main className="min-h-screen bg-gray-100 flex flex-col items-center py-10">
-                <h1 className="text-4xl font-bold text-blue-800 mb-6">Contact Us</h1>
+                <h1 className="text-4xl font-bold text-blue-800 mb-12 mt-2">Contact Us</h1>
                 <p className="text-lg text-gray-700 mb-8 text-center">
                     Have questions or need assistance? Feel free to reach out to us. 
                     We’d love to hear from you!

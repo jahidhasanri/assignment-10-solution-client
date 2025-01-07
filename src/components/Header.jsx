@@ -87,17 +87,20 @@ const Header = ({setHomeTheme}) => {
           >
             <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73,8.15,8.15,0,0,1-6.15-8.1,8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Z" />
           </svg>
+
+          <div>
+        <Flip>
+          <h1 className="text-2xl ml-10 font-bold md:ml-[80px] lg:ml-[20px] xl:ml-[50px]">
+            Sports Zone
+          </h1>
+        </Flip>
+        </div>
+        {/* <img src="https://i.ibb.co.com/ncPRPGv/log.jpg" className="w-20 h-20" alt="" /> */}
+
         </label>
 
         
-        <div>
-        <Flip>
-          <h1 className="text-2xl font-bold md:ml-[80px] lg:ml-[20px] xl:ml-[60px]">
-            Sports Zone
-          </h1>
-
-        </Flip>
-        </div>
+        
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex">

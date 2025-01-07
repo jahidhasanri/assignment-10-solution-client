@@ -48,8 +48,8 @@ const AddEquipment = () => {
      
       <Header />
 
-      <div className="w-11/12 mx-auto  flex-grow text-black mt-[150px] p-4">
-      <h2 className="text-3xl font-bold text-center mb-3 text-black">Add Equipment</h2>
+      <div className="container mx-auto pb-12 flex-grow text-black mt-[135px] p-4">
+      <h2 className="text-3xl font-bold text-center mb-10 text-black">Add Equipment</h2>
         <div className="card  bg-base-100 w-full shadow-2xl">
           <form onSubmit={handleAddEquipment} className="card-body ">
             <div className="form-control">

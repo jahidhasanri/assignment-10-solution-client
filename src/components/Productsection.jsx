@@ -30,9 +30,9 @@ const ProductSection = () => {
     };
 
     return (
-        <div className="p-4 ">
+        <div className="p-4 bg-gray-200 ">
             <div className="container mx-auto text-center">
-                <h2 className="text-3xl font-semibold text-gray-800 mb-8">Product Section</h2>
+                <h2 className="text-4xl font-semibold text-gray-800 mt-10 mb-10">Product Section</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {products.length > 0 ? (
                         products.map((product) => (

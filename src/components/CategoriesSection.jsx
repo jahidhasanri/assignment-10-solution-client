@@ -3,13 +3,13 @@ import React from 'react';
 const CategoriesSection = () => {
     return (
         <div>
-            <section className="py-12 mt-4  text-gray-900">
+            <section className="py-12 mt-8  text-gray-900">
                 <div className="container mx-auto text-center">
-                    <h2 className="text-3xl font-semibold mb-10">Sports Categories</h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 mr-4 ml-4 lg:grid-cols-3 xl:grid-cols-4 gap-14">
+                    <h2 className="text-4xl font-semibold mb-10">Sports Categories</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 mr-4 ml-4 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                         {/* Category 1 */}
                         <div>
-                            <h3 className="text-2xl font-semibold mb-4">Cricket</h3>
+                            <h3 className="text-2xl font-semibold mb-6">Cricket</h3>
                             <div className="border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                                 <img
                                     src="https://i.ibb.co/1Qp27y1/setcomp-main-1-47.jpg"
@@ -21,7 +21,7 @@ const CategoriesSection = () => {
 
                         {/* Category 2 */}
                         <div>
-                            <h3 className="text-2xl font-semibold mb-4">Football</h3>
+                            <h3 className="text-2xl font-semibold mb-6">Football</h3>
                             <div className="border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                                 <img
                                     src="https://i.ibb.co/kgzRgsd/football-equipment-illustration-collection-set-207579-3564.jpg"
@@ -33,7 +33,7 @@ const CategoriesSection = () => {
 
                         {/* Category 3 */}
                         <div>
-                            <h3 className="text-2xl font-semibold mb-4">Basketball</h3>
+                            <h3 className="text-2xl font-semibold mb-6">Basketball</h3>
                             <div className="border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                                 <img
                                     src="https://i.ibb.co/wCzm8SG/amazon-gold-box-basketball-essentials-gear-equipment-apparel.webp"
@@ -45,7 +45,7 @@ const CategoriesSection = () => {
 
                         {/* Category 4 */}
                         <div>
-                            <h3 className="text-2xl font-semibold mb-4">Tennis</h3>
+                            <h3 className="text-2xl font-semibold mb-6">Tennis</h3>
                             <div className="border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                                 <img
                                     src="https://i.ibb.co/GHPSZNH/Ag-AAAB0-Agt-WHHGr-EOR63u5qg-EGw-ASA.jpg"
@@ -57,7 +57,7 @@ const CategoriesSection = () => {
 
                         {/* Category 5 */}
                         <div>
-                            <h3 className="text-2xl font-semibold mb-4">Swimming</h3>
+                            <h3 className="text-2xl font-semibold mb-6">Swimming</h3>
                             <div className="border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                                 <img
                                     src="https://i.ibb.co/wyvt27C/ROKA-Equipment.jpg"
@@ -69,7 +69,7 @@ const CategoriesSection = () => {
 
                         {/* Category 6 */}
                         <div>
-                            <h3 className="text-2xl font-semibold mb-4">Gym Equipment</h3>
+                            <h3 className="text-2xl font-semibold mb-6">Gym Equipment</h3>
                             <div className="border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                                 <img
                                     src="https://i.ibb.co/gwYhV1n/71h-Lbft-SOQL.jpg"
@@ -81,7 +81,7 @@ const CategoriesSection = () => {
 
                         {/* Category 7 */}
                         <div>
-                            <h3 className="text-2xl font-semibold mb-4">Cycling</h3>
+                            <h3 className="text-2xl font-semibold mb-6">Cycling</h3>
                             <div className="border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                                 <img
                                     src="https://i.ibb.co/DCy1QzG/blue-bicycle-sportswear-accessories-cycling-realistic-mockup-set-isolated-vector-illustration-1284-8.jpg"
@@ -93,7 +93,7 @@ const CategoriesSection = () => {
 
                         {/* Category 8 */}
                         <div>
-                            <h3 className="text-2xl font-semibold mb-4">Baseball</h3>
+                            <h3 className="text-2xl font-semibold mb-6">Baseball</h3>
                             <div className="border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                                 <img
                                     src="https://i.ibb.co/5rcJY7Z/baseball-bat-ball-batting-helmet-260nw-2393879275.webp"
@@ -105,7 +105,7 @@ const CategoriesSection = () => {
 
                         {/* Category 9 */}
                         <div>
-                            <h3 className="text-2xl font-semibold mb-4">Rugby</h3>
+                            <h3 className="text-2xl font-semibold mb-6">Rugby</h3>
                             <div className="border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                                 <img
                                     src="https://i.ibb.co/Fm91bQW/DALL-E-2024-10-20-10-15-55-A-highly-detailed-and-photorealistic-image-showcasing-equipment-clothing.webp"
@@ -117,7 +117,7 @@ const CategoriesSection = () => {
 
                         {/* Category 10 */}
                         <div>
-                            <h3 className="text-2xl font-semibold mb-4">Hockey</h3>
+                            <h3 className="text-2xl font-semibold mb-6">Hockey</h3>
                             <div className="border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                                 <img
                                     src="https://i.ibb.co/qBnhZ9Z/CLP-001-HOC-Feb-Wk1-S1-Bauer-1280x.jpg"
@@ -129,7 +129,7 @@ const CategoriesSection = () => {
 
                         {/* Category 11 */}
                         <div>
-                            <h3 className="text-2xl font-semibold mb-4">Golf</h3>
+                            <h3 className="text-2xl font-semibold mb-6">Golf</h3>
                             <div className="border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                                 <img
                                     src="https://i.ibb.co/n3t9v7F/shutterstock-390627805.webp"
@@ -141,7 +141,7 @@ const CategoriesSection = () => {
 
                         {/* Category 12 */}
                         <div>
-                            <h3 className="text-2xl font-semibold mb-4">Volleyball</h3>
+                            <h3 className="text-2xl font-semibold mb-6">Volleyball</h3>
                             <div className="border rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl">
                                 <img
                                     src="https://i.ibb.co/ZLypXb1/71a-DG4a6-UEL-AC-SL1500.jpg"

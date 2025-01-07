@@ -6,10 +6,10 @@ const AboutUs = () => {
     return (
         <div>
             <Header></Header>
-        <div className="min-h-screen mt-[70px] bg-gray-100 py-10 px-6">
-            <div className="max-w-5xl mx-auto bg-white shadow-lg  rounded-lg overflow-hidden">
-                <div className="bg-blue-800 text-white py-8 px-6">
-                    <h1 className="text-4xl font-bold text-center">About Us</h1>
+        <div className="min-h-screen mt-[70px]  bg-gray-100 py-10 px-6">
+            <div className="container mx-auto bg-white shadow-lg mt-5 rounded-lg overflow-hidden">
+                <div className=" text-gray-800 py-8 px-6">
+                    <h1 className="text-3xl font-bold text-center mt-2 ">About Us</h1>
                 </div>
                 <div className="p-6">
                     <h2 className="text-2xl font-bold text-gray-800 mb-4">Welcome to Sports Zone!</h2>

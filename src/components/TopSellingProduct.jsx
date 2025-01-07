@@ -2,9 +2,9 @@ import React from 'react';
 
 const TopSellingProduct = () => {
     return (
-        <div className="py-12 ">
+        <div className="py-12 mb-6">
             <div className="container mx-auto text-center">
-                <h2 className="text-3xl font-semibold text-gray-800 mb-8">
+                <h2 className="text-4xl font-semibold text-gray-800 mb-11 mt-1">
                     Top Selling Products
                 </h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 mr-3 ml-4">
