@@ -5,18 +5,28 @@
 
 ![Screenshot](https://github.com/user-attachments/assets/a6c6fb05-0baa-4c86-8efb-d37cba98b97c)
 
-EquiSports is a modern, responsive e-commerce platform for purchasing and managing sports equipment. Designed with simplicity and user experience in mind, it caters to sports enthusiasts looking for a seamless online shopping experience.
+---
+
+## 📋 Project Overview
+EquiSports is a modern, responsive e-commerce platform for purchasing and managing sports equipment. Designed with simplicity and user experience in mind, it caters to sports enthusiasts looking for a seamless online shopping experience. The platform offers smooth navigation, efficient cart management, and secure transactions, ensuring a hassle-free shopping experience.
 
 ---
 
-## 📋 Features
+## 🛠️ Technologies Used
+- **Frontend:** React, Tailwind CSS, React Toastify, React Router, React Tooltip, Lottie React
+- **Backend:** Node.js, Express.js, MongoDB
+- **Authentication:** Firebase Authentication (Email/Password and Google Login)
+- **Hosting:** Firebase (Client-side), Vercel (Server-side)
 
+---
+
+## 🚀 Core Features
 1. **Responsive Design**  
    - Optimized for mobile, tablet, and desktop devices for a seamless browsing experience.
 
 2. **User Authentication**  
    - Supports login and registration with Email/Password and Google authentication.  
-   - Conditional navbar rendering based on user status.  
+   - Conditional navbar rendering based on user status.
 
 3. **Comprehensive Product Management**  
    - Add, update, and delete sports equipment through private routes.  
@@ -24,57 +34,30 @@ EquiSports is a modern, responsive e-commerce platform for purchasing and managi
 
 4. **Interactive User Experience**  
    - Includes features like dark/light mode toggle and sort functionality by price.  
-   - Integration of Lottie React animations and React Tooltip for enhanced interactivity.  
+   - Integration of Lottie React animations and React Tooltip for enhanced interactivity.
 
 5. **Error-Free Navigation**  
-   - Handles private routes gracefully and ensures no errors upon reloading any page.  
+   - Handles private routes gracefully and ensures no errors upon reloading any page.
 
 ---
 
 ## 🗂️ Pages and Functionalities
 
-### Public Pages  
-- **Home Page**  
-  - Banner with a slider showcasing meaningful sports content.  
-  - Product and sports categories sections.  
-  - Two additional sections for extra information.  
+### Public Pages
+- **Home Page:** Banner with a slider, product categories, and extra information sections.
+- **All Sports Equipment:** Displays all equipment with sorting by price and view details functionality.
+- **Login/Register Pages:** User authentication with validation using React Toastify.
+- **404 Page:** Custom-designed page for non-existing routes.
 
-- **All Sports Equipment**  
-  - Displays all equipment in a table with sorting by price functionality.  
-  - View Details button for more information about products.  
-
-- **Login and Register Pages**  
-  - User authentication with validation messages using React Toastify.  
-
-- **404 Page**  
-  - A custom-designed page for non-existing routes.  
-
-### Private Pages  
-- **Add Equipment Page**  
-  - A secure form to add new products with fields like image, name, price, category, and more.  
-
-- **View Details Page**  
-  - Displays all details of a selected product in a visually appealing design.  
-
-- **My Equipment List**  
-  - Shows all items added by the logged-in user in a card format with options to update or delete.  
-
-- **Update Page**  
-  - Editable form to update existing product details with validation and success messages.  
+### Private Pages
+- **Add Equipment Page:** Secure form for adding products with necessary fields.
+- **View Details Page:** Detailed view of selected products.
+- **My Equipment List:** Displays items added by the user with update and delete options.
+- **Update Page:** Editable form to update product details with validation and success messages.
 
 ---
 
-## 🛠️ Tech Stack
-
-- **Frontend**: React, Tailwind CSS, React Toastify, React Router, React Tooltip, Lottie React  
-- **Backend**: Node.js, Express.js, MongoDB  
-- **Authentication**: Firebase Authentication (Email/Password and Google Login)  
-- **Hosting**: Firebase (Client-side), Vercel (Server-side)  
-
----
-
-## 🧑‍💻 Project Dependencies
-
+## 📦 Project Dependencies
 ```json
 {
   "name": "assignment-10-solution-client",
@@ -124,8 +107,38 @@ EquiSports is a modern, responsive e-commerce platform for purchasing and managi
     "vite": "^6.0.1"
   }
 }
-## 🚀 How to Run Locally
-- **git clone https://github.com/your-username/equi-sports.git**
-- **cd equi-sports**
-- **npm install**
-- **npm run dev**
+```
+
+---
+
+## 💻 How to Run Locally
+1. **Clone the Repository:**  
+   ```bash
+   git clone https://github.com/your-username/equi-sports.git
+   ```
+2. **Navigate to the Project Directory:**  
+   ```bash
+   cd equi-sports
+   ```
+3. **Install Dependencies:**  
+   ```bash
+   npm install
+   ```
+4. **Run the Development Server:**  
+   ```bash
+   npm run dev
+   ```
+5. **Open in Browser:**  
+   Go to [http://localhost:5173](http://localhost:5173) to view the project locally.
+
+---
+
+## 🔗 Relevant Resources
+- [Live Demo](https://assignment-10-solution.web.app/)
+- [GitHub Repository](https://github.com/your-username/equi-sports)
+- [Firebase Documentation](https://firebase.google.com/docs)
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs/installation)
+
+---
+
