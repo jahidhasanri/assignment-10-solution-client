@@ -135,7 +135,6 @@ EquiSports is a modern, responsive e-commerce platform for purchasing and managi
 
 ## 🔗 Relevant Resources
 - [Live Demo](https://assignment-10-solution.web.app/)
-- [GitHub Repository](https://github.com/your-username/equi-sports)
 - [Firebase Documentation](https://firebase.google.com/docs)
 - [React Documentation](https://reactjs.org/docs/getting-started.html)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs/installation)
